@@ -1,22 +1,61 @@
 <RootWidget>:
-    TabbedPanel:
-        do_default_tab: False
-        
-        TabbedPanelItem:
-            text: 'Item 1'
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    monday: monday
+    tuesday: tuesday
+    wednesday: wednesday
+    thursday: thursday
+    friday: friday
+    label1: label1
+    label2: label2
+    label3: label3
+    label4: label4
+    label5: label5
+    do_default_tab: False
+    TabbedPanelItem:
+        id: monday
+        text: 'Monday'
+        BoxLayout:
+            orientation: 'horizontal'
             BoxLayout:
-        
-        TabbedPanelItem:
-            on_touch_move:    stu
-            bold: True
-            text: 'Item 2'
+                orientation: 'vertical'
+                size_hint_x: .5
+                Label:
+                    id: label1
+                    text: root.text1
+                Label:
+                    id: label2
+                    text: root.text2
+                Label:
+                    id: label3
+                    text: root.text3
+                Label:
+                    id: label4
+                    text: root.text4
+                Label:
+                    id: label5
+                    text: root.text5
             BoxLayout:
-        
-        TabbedPanelItem:
-            text: 'Item 3'
-            BoxLayout:
-        
-        TabbedPanelItem:
-        	text:'Item 3'
-        	Boxlayout:
-
+                orientation: 'vertical'
+                size_hint_x: .5
+                Button:
+                    text: 'Edit'
+                Button:
+                    text: 'Edit'
+                Button:
+                    text: 'Edit'
+                Button:
+                    text: 'Edit'
+                Button:
+                    text: 'Edit'
+    TabbedPanelItem:
+        id: tuesday
+        text: 'Tuesday'
+    TabbedPanelItem:
+        id: wednesday
+        text: 'Wednesday'
+    TabbedPanelItem:
+        id: thursday
+        text: 'Thursday'
+    TabbedPanelItem:
+        id: friday
+        text: 'Friday'
