@@ -1,0 +1,39 @@
+<RootWidget>:
+    do_default_tab: False
+    TabbedPanelItem:
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: 'Edit'
+                    on_press: root.edit(label11, monday)
+                Button:
+                    text: 'Edit'
+                    on_press: root.edit(label12, monday)
+                Button:
+                    text: 'Edit'
+                    on_press: root.edit(label13, monday)
+                Button:
+                    text: 'Edit'
+                    on_press: root.edit(label14, monday)
+                Button:
+                    text: 'Edit'
+                    on_press: root.edit(label15, monday)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    id: label11
+                    text: 'First Hour'
+                Label:
+                    id: label12
+                    text: 'Second Hour'
+                Label:
+                    id: label13
+                    text: 'Third Hour'
+                Label:
+                    id: label14
+                    text: 'Fourth Hour'
+                Label:
+                    id: label15
+                    text: 'Fifth Hour'
