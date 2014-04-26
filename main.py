@@ -7,6 +7,12 @@ from kivy.uix.textinput import TextInput
 from pickle import load, dump
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.dropdown import DropDown
+
+class DateDrop(DropDown):
+    for i in range(31):
+        pass
+
 class RootWidget(TabbedPanel):
     opened = False
     try:
