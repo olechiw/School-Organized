@@ -1,5 +1,5 @@
 from kivy.uix.tabbedpanel import TabbedPanel
-from kivy.app import App
+from kivy.base import runTouchApp
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.boxlayout import BoxLayout
@@ -7,13 +7,10 @@ from kivy.uix.textinput import TextInput
 from pickle import load, dump
 from kivy.uix.button import Button
 from kivy.uix.label import Label
-from kivy.uix.dropdown import DropDown
-
-class DateDrop(DropDown):
-    for i in range(31):
-        pass
+from kivy.uix.spinner import Spinner
 
 class RootWidget(TabbedPanel):
+
     opened = False
     try:
         tmp = open('data', 'r')
@@ -28,6 +25,7 @@ class RootWidget(TabbedPanel):
                 'Wednesday':[['First Hour', '', '', '', '', """"""],['Second Hour', '', '', '', '', """"""],['Third Hour','','','','',""""""],['Fourth Hour','','','','',""""""],['Fifth Hour','','','','',""""""]],
                 'Thursday':[['First Hour', '', '', '', '', """"""],['Second Hour', '', '', '', '', """"""],['Third Hour','','','','',""""""],['Fourth Hour','','','','',""""""],['Fifth Hour','','','','',""""""]],
                 'Friday':[['First Hour', '', '', '', '', """"""],['Second Hour', '', '', '', '', """"""],['Third Hour','','','','',""""""],['Fourth Hour','','','','',""""""],['Fifth Hour','','','','',""""""]]}
+
     def edit(self,label,day,hour):
         self.label = label
         self.day = day
@@ -38,6 +36,7 @@ class RootWidget(TabbedPanel):
         self.label3 = Label(text= 'Assignment')
         self.label4 = Label(text='Duedate')
         self.label5 = Label(text='Class Name')
+        self.spinner = Spinner(text='1',values=tuple(range(1,32),size_hint=(.25,.25)))
         self.hour_name = TextInput(text_hint='Class Name',text=self.data[day][hour][0],multiline=False)
         self.assignment1in = TextInput(text_hint='Assignment',text=self.data[day][hour][1],multiline=False)
         self.assignment2in = TextInput(text_hint='Assignment',text=self.data[day][hour][3],multiline=False)
@@ -61,6 +60,7 @@ class RootWidget(TabbedPanel):
         self.okbutton.bind(on_press=self.dismissok)
         self.cancelbutton.bind(on_press=self.popup.dismiss)
         self.popup.open()
+
     def dismissok(self,instance):
         self.data[self.day][self.hour][0] = self.hour_name.text
         self.data[self.day][self.hour][1] = self.assignment1in.text
@@ -72,9 +72,10 @@ class RootWidget(TabbedPanel):
         dump(self.data,data)
         data.close()
         self.popup.dismiss()
-class MainApp(App):
-    def build(self):
-        return RootWidget()
+#
+# class MainApp(App):
+#     def build(self):
+#         return RootWidget()
 
 if __name__=='__main__' or '__android__':
-    MainApp().run()
+    runTouchApp(RootWidget)
