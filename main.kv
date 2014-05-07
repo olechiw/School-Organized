@@ -6,21 +6,41 @@
             orientation: 'horizontal'
             BoxLayout:
                 orientation: 'vertical'
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label11, 'Monday',0)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label12, 'Monday',1)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label13, 'Monday',2)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label14, 'Monday',3)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label15, 'Monday',4)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label11, 'Monday',0)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Monday', 0)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label12, 'Monday',1)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Monday', 1)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label13, 'Monday',2)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Monday', 2)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label14, 'Monday',3)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Monday', 3)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label15, 'Monday',4)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Monday', 4)
             BoxLayout:
                 orientation: 'vertical'
                 Label:
@@ -44,149 +64,229 @@
             orientation: 'horizontal'
             BoxLayout:
                 orientation: 'vertical'
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label21, 'Tuesday',0)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label22, 'Tuesday',1)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label23, 'Tuesday',2)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label24, 'Tuesday',3)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label25, 'Tuesday',4)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label21, 'Tuesday',0)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Tuesday', 0)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label22, 'Tuesday',1)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Tuesday', 1)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label23, 'Tuesday',2)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Tuesday', 2)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label24, 'Tuesday',3)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Tuesday', 3)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label25, 'Tuesday',4)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Tuesday', 4)
             BoxLayout:
                 orientation: 'vertical'
                 Label:
                     id: label21
-                    text: root.data['Tuesday'][0][0] + '\n' + root.data['Tuesday'][0][1] + ' ' + root.data['Tuesday'][0][2] + '\n' + root.data['Tuesday'][0][3] + root.data['Tuesday'][0][4]
+                    text: root.data['Tuesday'][0][0] + '\n' + root.data['Tuesday'][0][1] + ' ' + root.data['Tuesday'][0][2] + '\n' + root.data['Tuesday'][0][3] + ' ' +  root.data['Tuesday'][0][4]
                 Label:
                     id: label22
-                    text: root.data['Tuesday'][1][0] + '\n' + root.data['Tuesday'][1][1] + ' ' + root.data['Tuesday'][1][2] + '\n' + root.data['Tuesday'][1][3] + root.data['Tuesday'][1][4]
+                    text: root.data['Tuesday'][1][0] + '\n' + root.data['Tuesday'][1][1] + ' ' + root.data['Tuesday'][1][2] + '\n' + root.data['Tuesday'][1][3] + ' ' +  root.data['Tuesday'][1][4]
                 Label:
                     id: label23
-                    text: root.data['Tuesday'][2][0] + '\n' + root.data['Tuesday'][2][1] + ' ' + root.data['Tuesday'][2][2] + '\n' + root.data['Tuesday'][2][3] + root.data['Tuesday'][2][4]
+                    text: root.data['Tuesday'][2][0] + '\n' + root.data['Tuesday'][2][1] + ' ' + root.data['Tuesday'][2][2] + '\n' + root.data['Tuesday'][2][3] + ' ' +  root.data['Tuesday'][2][4]
                 Label:
                     id: label24
-                    text: root.data['Tuesday'][3][0] + '\n' + root.data['Tuesday'][3][1] + ' ' + root.data['Tuesday'][3][2] + '\n' + root.data['Tuesday'][3][3] + root.data['Tuesday'][3][4]
+                    text: root.data['Tuesday'][3][0] + '\n' + root.data['Tuesday'][3][1] + ' ' + root.data['Tuesday'][3][2] + '\n' + root.data['Tuesday'][3][3] + ' ' +  root.data['Tuesday'][3][4]
                 Label:
                     id: label25
-                    text: root.data['Tuesday'][4][0] + '\n' + root.data['Tuesday'][4][1] + ' ' + root.data['Tuesday'][4][2] + '\n' + root.data['Tuesday'][4][3] + root.data['Tuesday'][4][4]
+                    text: root.data['Tuesday'][4][0] + '\n' + root.data['Tuesday'][4][1] + ' ' + root.data['Tuesday'][4][2] + '\n' + root.data['Tuesday'][4][3] + ' ' +  root.data['Tuesday'][4][4]
     TabbedPanelItem:
         text: 'Wednesday'
         BoxLayout:
             orientation: 'horizontal'
             BoxLayout:
                 orientation: 'vertical'
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label31, 'Wednesday',0)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label32, 'Wednesday',1)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label33, 'Wednesday',2)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label34, 'Wednesday',3)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label35, 'Wednesday',4)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label31, 'Wednesday',0)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Wednesday', 0)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label32, 'Wednesday',1)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Wednesday', 1)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label33, 'Wednesday',2)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Wednesday', 2)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label34, 'Wednesday',3)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Wednesday', 3)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label35, 'Wednesday',4)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Wednesday', 4)
             BoxLayout:
                 orientation: 'vertical'
                 Label:
                     id: label31
-                    text: root.data['Wednesday'][0][0] + '\n' + root.data['Wednesday'][0][1] + ' ' + root.data['Wednesday'][0][2] + '\n' + root.data['Wednesday'][0][3] + root.data['Wednesday'][0][4]
+                    text: root.data['Wednesday'][0][0] + '\n' + root.data['Wednesday'][0][1] + ' ' + root.data['Wednesday'][0][2] + '\n' + root.data['Wednesday'][0][3] + ' ' +  root.data['Wednesday'][0][4]
                 Label:
                     id: label32
-                    text: root.data['Wednesday'][1][0] + '\n' + root.data['Wednesday'][1][1] + ' ' + root.data['Wednesday'][1][2] + '\n' + root.data['Wednesday'][1][3] + root.data['Wednesday'][1][4]
+                    text: root.data['Wednesday'][1][0] + '\n' + root.data['Wednesday'][1][1] + ' ' + root.data['Wednesday'][1][2] + '\n' + root.data['Wednesday'][1][3] + ' ' +  root.data['Wednesday'][1][4]
                 Label:
                     id: label33
-                    text: root.data['Wednesday'][2][0] + '\n' + root.data['Wednesday'][2][1] + ' ' + root.data['Wednesday'][2][2] + '\n' + root.data['Wednesday'][2][3] + root.data['Wednesday'][2][4]
+                    text: root.data['Wednesday'][2][0] + '\n' + root.data['Wednesday'][2][1] + ' ' + root.data['Wednesday'][2][2] + '\n' + root.data['Wednesday'][2][3] + ' ' +  root.data['Wednesday'][2][4]
                 Label:
                     id: label34
-                    text: root.data['Wednesday'][3][0] + '\n' + root.data['Wednesday'][3][1] + ' ' + root.data['Wednesday'][3][2] + '\n' + root.data['Wednesday'][3][3] + root.data['Wednesday'][3][4]
+                    text: root.data['Wednesday'][3][0] + '\n' + root.data['Wednesday'][3][1] + ' ' + root.data['Wednesday'][3][2] + '\n' + root.data['Wednesday'][3][3] + ' ' +  root.data['Wednesday'][3][4]
                 Label:
                     id: label35
-                    text: root.data['Wednesday'][4][0] + '\n' + root.data['Wednesday'][4][1] + ' ' + root.data['Wednesday'][4][2] + '\n' + root.data['Wednesday'][4][3] + root.data['Wednesday'][4][4]
+                    text: root.data['Wednesday'][4][0] + '\n' + root.data['Wednesday'][4][1] + ' ' + root.data['Wednesday'][4][2] + '\n' + root.data['Wednesday'][4][3] + ' ' +  root.data['Wednesday'][4][4]
     TabbedPanelItem:
         text: 'Thursday'
         BoxLayout:
             orientation: 'horizontal'
             BoxLayout:
                 orientation: 'vertical'
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label41, 'Thursday',0)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label42, 'Thursday',1)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label43, 'Thursday',2)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label44, 'Thursday',3)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label45, 'Thursday',4)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label41, 'Thursday',0)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Thursday', 0)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label42, 'Thursday',1)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Thursday', 1)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label43, 'Thursday',2)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Thursday', 2)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label44, 'Thursday',3)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Thursday', 3)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label45, 'Thursday',4)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Thursday', 4)
             BoxLayout:
                 orientation: 'vertical'
                 Label:
                     id: label41
-                    text: root.data['Thursday'][0][0] + '\n' + root.data['Thursday'][0][1] + ' ' + root.data['Thursday'][0][2] + '\n' + root.data['Thursday'][0][3] + root.data['Thursday'][0][4]
+                    text: root.data['Thursday'][0][0] + '\n' + root.data['Thursday'][0][1] + ' ' + root.data['Thursday'][0][2] + '\n' + root.data['Thursday'][0][3] + ' ' +  root.data['Thursday'][0][4]
                 Label:
                     id: label42
-                    text: root.data['Thursday'][1][0] + '\n' + root.data['Thursday'][1][1] + ' ' + root.data['Thursday'][1][2] + '\n' + root.data['Thursday'][1][3] + root.data['Thursday'][1][4]
+                    text: root.data['Thursday'][1][0] + '\n' + root.data['Thursday'][1][1] + ' ' + root.data['Thursday'][1][2] + '\n' + root.data['Thursday'][1][3] + ' ' +  root.data['Thursday'][1][4]
                 Label:
                     id: label43
-                    text: root.data['Thursday'][2][0] + '\n' + root.data['Thursday'][2][1] + ' ' + root.data['Thursday'][2][2] + '\n' + root.data['Thursday'][2][3] + root.data['Thursday'][2][4]
+                    text: root.data['Thursday'][2][0] + '\n' + root.data['Thursday'][2][1] + ' ' + root.data['Thursday'][2][2] + '\n' + root.data['Thursday'][2][3] + ' ' +  root.data['Thursday'][2][4]
                 Label:
                     id: label44
-                    text: root.data['Thursday'][3][0] + '\n' + root.data['Thursday'][3][1] + ' ' + root.data['Thursday'][3][2] + '\n' + root.data['Thursday'][3][3] + root.data['Thursday'][3][4]
+                    text: root.data['Thursday'][3][0] + '\n' + root.data['Thursday'][3][1] + ' ' + root.data['Thursday'][3][2] + '\n' + root.data['Thursday'][3][3] + ' ' +  root.data['Thursday'][3][4]
                 Label:
                     id: label45
-                    text: root.data['Thursday'][4][0] + '\n' + root.data['Thursday'][4][1] + ' ' + root.data['Thursday'][4][2] + '\n' + root.data['Thursday'][4][3] + root.data['Thursday'][4][4]
+                    text: root.data['Thursday'][4][0] + '\n' + root.data['Thursday'][4][1] + ' ' + root.data['Thursday'][4][2] + '\n' + root.data['Thursday'][4][3] + ' ' +  root.data['Thursday'][4][4]
     TabbedPanelItem:
         text: 'Friday'
         BoxLayout:
             orientation: 'horizontal'
             BoxLayout:
                 orientation: 'vertical'
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label51, 'Friday',0)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label52, 'Friday',1)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label53, 'Friday',2)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label54, 'Friday',3)
-                Button:
-                    text: 'Edit'
-                    on_press: root.edit(label55, 'Friday',4)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label51, 'Friday',0)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Friday', 0)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label52, 'Friday',1)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Friday', 1)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label53, 'Friday',2)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Friday', 2)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label54, 'Friday',3)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Friday', 3)
+                BoxLayout:
+                    Button:
+                        text: 'Edit'
+                        on_press: root.edit(label55, 'Friday',4)
+                    Button:
+                        text: 'Take Notes'
+                        on_press: root.editnotes('Friday', 4)
             BoxLayout:
                 orientation: 'vertical'
                 Label:
                     id: label51
-                    text: root.data['Friday'][0][0] + '\n' + root.data['Friday'][0][1] + ' ' + root.data['Friday'][0][2] + '\n' + root.data['Friday'][0][3] + root.data['Friday'][0][4]
+                    text: root.data['Friday'][0][0] + '\n' + root.data['Friday'][0][1] + ' ' + root.data['Friday'][0][2] + '\n' + root.data['Friday'][0][3] + ' ' +  root.data['Friday'][0][4]
                 Label:
                     id: label52
-                    text: root.data['Friday'][1][0] + '\n' + root.data['Friday'][1][1] + ' ' + root.data['Friday'][1][2] + '\n' + root.data['Friday'][1][3] + root.data['Friday'][1][4]
+                    text: root.data['Friday'][1][0] + '\n' + root.data['Friday'][1][1] + ' ' + root.data['Friday'][1][2] + '\n' + root.data['Friday'][1][3] + ' ' +  root.data['Friday'][1][4]
                 Label:
                     id: label53
-                    text: root.data['Friday'][2][0] + '\n' + root.data['Friday'][2][1] + ' ' + root.data['Friday'][2][2] + '\n' + root.data['Friday'][2][3] + root.data['Friday'][2][4]
+                    text: root.data['Friday'][2][0] + '\n' + root.data['Friday'][2][1] + ' ' + root.data['Friday'][2][2] + '\n' + root.data['Friday'][2][3] + ' ' +  root.data['Friday'][2][4]
                 Label:
                     id: label54
-                    text: root.data['Friday'][3][0] + '\n' + root.data['Friday'][3][1] + ' ' + root.data['Friday'][3][2] + '\n' + root.data['Friday'][3][3] + root.data['Friday'][3][4]
+                    text: root.data['Friday'][3][0] + '\n' + root.data['Friday'][3][1] + ' ' + root.data['Friday'][3][2] + '\n' + root.data['Friday'][3][3] + ' ' +  root.data['Friday'][3][4]
                 Label:
                     id: label55
-                    text: root.data['Friday'][4][0] + '\n' + root.data['Friday'][4][1] + ' ' + root.data['Friday'][4][2] + '\n' + root.data['Friday'][4][3] + root.data['Friday'][4][4]
+                    text: root.data['Friday'][4][0] + '\n' + root.data['Friday'][4][1] + ' ' + root.data['Friday'][4][2] + '\n' + root.data['Friday'][4][3] + ' ' +  root.data['Friday'][4][4]

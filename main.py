@@ -24,56 +24,56 @@ class RootWidget(TabbedPanel):
         data = load(tmp)
         tmp.close()
     else:
-        data = {'Monday':[['First Hour', '', 'Month/Day/Year',
-                            '', 'Month/Day/Year', """"""],
-                          ['Second Hour', '', 'Month/Day/Year',
-                            '', 'Month/Day/Year', """"""],
-                          ['Third Hour','','Month/Day/Year',
-                           '','Month/Day/Year',""""""],
-                          ['Fourth Hour','','Month/Day/Year',
-                           '','Month/Day/Year',""""""],
-                          ['Fifth Hour','','Month/Day/Year',
-                           '','Month/Day/Year',""""""]],
-                'Tuesday':[['First Hour', '', 'Month/Day/Year',
-                             '', 'Month/Day/Year', """"""],
-                           ['Second Hour', '', 'Month/Day/Year',
-                             '', 'Month/Day/Year', """"""],
-                           ['Third Hour','','Month/Day/Year',
-                            '','Month/Day/Year',""""""],
-                           ['Fourth Hour','','Month/Day/Year',
-                            '','Month/Day/Year',""""""],
-                           ['Fifth Hour','','Month/Day/Year',
-                            '','Month/Day/Year',""""""]],
-                'Wednesday':[['First Hour', '', 'Month/Day/Year',
-                               '', 'Month/Day/Year', """"""],
-                             ['Second Hour', '', 'Month/Day/Year',
-                               '', 'Month/Day/Year', """"""],
-                             ['Third Hour','','Month/Day/Year',
-                              '','Month/Day/Year',""""""],
-                             ['Fourth Hour','','Month/Day/Year',
-                              '','Month/Day/Year',""""""],
-                             ['Fifth Hour','','Month/Day/Year',
-                              '','Month/Day/Year',""""""]],
-                'Thursday':[['First Hour', '', 'Month/Day/Year',
-                              '', 'Month/Day/Year', """"""],
-                            ['Second Hour', '', 'Month/Day/Year',
-                              '', 'Month/Day/Year', """"""],
-                            ['Third Hour','','Month/Day/Year',
-                             '','Month/Day/Year',""""""],
-                            ['Fourth Hour','','Month/Day/Year',
-                             '','Month/Day/Year',""""""],
-                            ['Fifth Hour','','Month/Day/Year',
-                             '','Month/Day/Year',""""""]],
-                'Friday':[['First Hour', '', 'Month/Day/Year',
-                            '', 'Month/Day/Year', """"""],
-                          ['Second Hour', '', 'Month/Day/Year',
-                            '', 'Month/Day/Year', """"""],
-                          ['Third Hour','','Month/Day/Year',
-                           '','Month/Day/Year',""""""],
-                          ['Fourth Hour','','Month/Day/Year',
-                           '','Month/Day/Year',""""""],
-                          ['Fifth Hour','','Month/Day/Year',
-                           '','Month/Day/Year',""""""]]}
+        data = {'Monday':[['First Hour', 'Assignment', 'Month/Day/Year',
+                            'Assignment', 'Month/Day/Year', """"""],
+                          ['Second Hour', 'Assignment', 'Month/Day/Year',
+                            'Assignment', 'Month/Day/Year', """"""],
+                          ['Third Hour','Assignment','Month/Day/Year',
+                           'Assignment','Month/Day/Year',""""""],
+                          ['Fourth Hour','Assignment','Month/Day/Year',
+                           'Assignment','Month/Day/Year',""""""],
+                          ['Fifth Hour','Assignment','Month/Day/Year',
+                           'Assignment','Month/Day/Year',""""""]],
+                'Tuesday':[['First Hour', 'Assignment', 'Month/Day/Year',
+                             'Assignment', 'Month/Day/Year', """"""],
+                           ['Second Hour', 'Assignment', 'Month/Day/Year',
+                             'Assignment', 'Month/Day/Year', """"""],
+                           ['Third Hour','Assignment','Month/Day/Year',
+                            'Assignment','Month/Day/Year',""""""],
+                           ['Fourth Hour','Assignment','Month/Day/Year',
+                            'Assignment','Month/Day/Year',""""""],
+                           ['Fifth Hour','Assignment','Month/Day/Year',
+                            'Assignment','Month/Day/Year',""""""]],
+                'Wednesday':[['First Hour', 'Assignment', 'Month/Day/Year',
+                               'Assignment', 'Month/Day/Year', """"""],
+                             ['Second Hour', 'Assignment', 'Month/Day/Year',
+                               'Assignment', 'Month/Day/Year', """"""],
+                             ['Third Hour','Assignment','Month/Day/Year',
+                              'Assignment','Month/Day/Year',""""""],
+                             ['Fourth Hour','Assignment','Month/Day/Year',
+                              'Assignment','Month/Day/Year',""""""],
+                             ['Fifth Hour','Assignment','Month/Day/Year',
+                              'Assignment','Month/Day/Year',""""""]],
+                'Thursday':[['First Hour', 'Assignment', 'Month/Day/Year',
+                              'Assignment', 'Month/Day/Year', """"""],
+                            ['Second Hour', 'Assignment', 'Month/Day/Year',
+                              'Assignment', 'Month/Day/Year', """"""],
+                            ['Third Hour','Assignment','Month/Day/Year',
+                             'Assignment','Month/Day/Year',""""""],
+                            ['Fourth Hour','Assignment','Month/Day/Year',
+                             'Assignment','Month/Day/Year',""""""],
+                            ['Fifth Hour','Assignment','Month/Day/Year',
+                             'Assignment','Month/Day/Year',""""""]],
+                'Friday':[['First Hour', 'Assignment', 'Month/Day/Year',
+                            'Assignment', 'Month/Day/Year', """"""],
+                          ['Second Hour', 'Assignment', 'Month/Day/Year',
+                            'Assignment', 'Month/Day/Year', """"""],
+                          ['Third Hour','Assignment','Month/Day/Year',
+                           'Assignment','Month/Day/Year',""""""],
+                          ['Fourth Hour','Assignment','Month/Day/Year',
+                           'Assignment','Month/Day/Year',""""""],
+                          ['Fifth Hour','Assignment','Month/Day/Year',
+                           'Assignment','Month/Day/Year',""""""]]}
 
     def edit(self,label,day,hour):
 
@@ -109,7 +109,6 @@ class RootWidget(TabbedPanel):
                             values=tuple(self.day3),
                             size_hint_x=.75,
                             pos_hint={'center_x':.5,'center_y':.5})
-        print 1
         self.day2 = Spinner(text=self.data[day][hour][4].split('/')[0],
                             values=tuple(self.day3),
                             size_hint_x=.75,
@@ -118,7 +117,6 @@ class RootWidget(TabbedPanel):
                               values=tuple(self.month),
                               size_hint_x=.75,
                               pos_hint={'center_x':.5,'center_y':.5})
-        print self.data[day][hour][4].split('/')
         self.month2 = Spinner(text=self.data[day][hour][4].split('/')[1],
                               values=tuple(self.month),
                               size_hint_x=.75,
@@ -131,29 +129,28 @@ class RootWidget(TabbedPanel):
                              values=tuple(self.year),
                              size_hint_x=.75,
                              pos_hint={'center_x':.5,'center_y':.5})
-        print 2
         duedate1in.add_widget(self.day1)
         duedate1in.add_widget(self.month1)
         duedate1in.add_widget(self.year1)
         duedate2in.add_widget(self.day2)
         duedate2in.add_widget(self.month2)
         duedate2in.add_widget(self.year2)
-        print 3
-        self.okbutton = Button(text='Ok')
-        self.cancelbutton = Button(text='Cancel')
+        self.okbutton = Button(text='Ok',
+                            size_hint_x=.75,
+                            pos_hint={'center_x':.5,'center_y':.5})
+        self.cancelbutton = Button(text='Cancel',
+                            size_hint_x=.75,
+                            pos_hint={'center_x':.5,'center_y':.5})
         self.editback.add_widget(self.label5)
         self.editback.add_widget(self.hour_name)
         self.editback.add_widget(self.label1)
         self.editback.add_widget(self.assignment1in)
         self.editback.add_widget(self.label2)
-        print 4
         self.editback.add_widget(duedate1in)
         self.editback.add_widget(self.label3)
         self.editback.add_widget(self.assignment2in)
         self.editback.add_widget(self.label4)
-        print 5
         self.editback.add_widget(duedate2in)
-        print 6
         self.editback.add_widget(self.okbutton)
         self.editback.add_widget(self.cancelbutton)
 
@@ -164,6 +161,7 @@ class RootWidget(TabbedPanel):
         self.popup.open()
 
     def dismissok(self,instance):
+
         self.data[self.day][self.hour][0] = self.hour_name.text
         if (self.day1.text != 'Day') and (self.month1.text != 'Month') and (self.year1.text != 'Year'):
              self.data[self.day][self.hour][1] = self.assignment1in.text
@@ -183,9 +181,39 @@ class RootWidget(TabbedPanel):
         data.close()
         self.popup.dismiss()
 
+    def dismissok2(self,instance):
+
+        self.data[self.day][self.index][5] = self.editin.text
+        self.popup.dismiss()
+
+    def editnotes(self,day,index):
+
+        self.day = day
+        self.index = index
+        self.editback = BoxLayout(orientation='vertical')
+        self.editin = TextInput(text_hint='Notes',
+                                text=self.data[self.day][self.index][5],
+                                multiline=True)
+        self.okbutton = Button(text='Ok',size_hint=(.5,.5),
+                               pos_hint={'center_x':.5,})
+        self.cancelbutton = Button(text='Cancel',size_hint=(.5,.5),
+                                   pos_hint={'center_x':.5,})
+        self.editback.add_widget(self.editin)
+        self.editback.add_widget(self.okbutton)
+        self.editback.add_widget(self.cancelbutton)
+        self.popup = Popup(content=self.editback,auto_dismiss=False,
+                           size_hint=(.75,.75),title='Edit Notes')
+        self.okbutton.bind(on_press=self.dismissok2)
+        self.cancelbutton.bind(on_press=self.popup.dismiss)
+        self.popup.open()
+
+
+
 class MainApp(App):
+
     def build(self):
         return RootWidget()
 
-if __name__=='__main__' or '__android__':
+if __name__== '__main__' or '__android__':
+
     MainApp().run()
