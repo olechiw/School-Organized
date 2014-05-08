@@ -175,7 +175,7 @@ class RootWidget(TabbedPanel):
         if self.assignment2in.text and (self.day2.text != 'Day') and (self.month2.text != 'Month') and (self.year2.text != 'Year'):
              self.data[self.day][self.hour][4] = self.duedate2in.text
 
-        self.label.text = self.data['Monday'][0][0] + '\n' + self.data['Monday'][0][1] + ' ' + self.data['Monday'][0][2] + '\n' + self.data['Monday'][0][3] + ' ' + self.data['Monday'][0][4]
+        self.label.text = self.data[self.day][self.hour][0] + '\n' + self.data[self.day][self.hour][1] + ' ' + self.data[self.day][self.hour][2] + '\n' + self.data[self.day][self.hour][3] + ' ' + self.data[self.day][self.hour][4]
         data = open('data','w')
         dump(self.data,data)
         data.close()
@@ -183,16 +183,16 @@ class RootWidget(TabbedPanel):
 
     def dismissok2(self,instance):
 
-        self.data[self.day][self.index][5] = self.editin.text
+        self.data[self.days][self.indexs][5] = self.editin.text
         self.popup.dismiss()
 
     def editnotes(self,day,index):
 
-        self.day = day
-        self.index = index
+        self.days = day
+        self.indexs = index
         self.editback = BoxLayout(orientation='vertical')
         self.editin = TextInput(text_hint='Notes',
-                                text=self.data[self.day][self.index][5],
+                                text=self.data[self.days][self.indexs][5],
                                 multiline=True)
         self.okbutton = Button(text='Ok',size_hint=(.5,.5),
                                pos_hint={'center_x':.5,})
