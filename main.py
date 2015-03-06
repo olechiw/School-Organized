@@ -15,65 +15,24 @@ class RootWidget(TabbedPanel):
     month = map(str,range(1,13))
     year = map(str,range(2014,2051))
 
-    opened = False
     try:
-        tmp = open('data', 'r')
-        opened=True
-    except: pass
-    if opened:
-        data = load(tmp)
-        tmp.close()
-    else:
-        data = {'Monday':[['First Hour', 'Assignment', 'Month/Day/Year',
-                            'Assignment', 'Month/Day/Year', """"""],
-                          ['Second Hour', 'Assignment', 'Month/Day/Year',
-                            'Assignment', 'Month/Day/Year', """"""],
-                          ['Third Hour','Assignment','Month/Day/Year',
-                           'Assignment','Month/Day/Year',""""""],
-                          ['Fourth Hour','Assignment','Month/Day/Year',
-                           'Assignment','Month/Day/Year',""""""],
-                          ['Fifth Hour','Assignment','Month/Day/Year',
-                           'Assignment','Month/Day/Year',""""""]],
-                'Tuesday':[['First Hour', 'Assignment', 'Month/Day/Year',
-                             'Assignment', 'Month/Day/Year', """"""],
-                           ['Second Hour', 'Assignment', 'Month/Day/Year',
-                             'Assignment', 'Month/Day/Year', """"""],
-                           ['Third Hour','Assignment','Month/Day/Year',
-                            'Assignment','Month/Day/Year',""""""],
-                           ['Fourth Hour','Assignment','Month/Day/Year',
-                            'Assignment','Month/Day/Year',""""""],
-                           ['Fifth Hour','Assignment','Month/Day/Year',
-                            'Assignment','Month/Day/Year',""""""]],
-                'Wednesday':[['First Hour', 'Assignment', 'Month/Day/Year',
-                               'Assignment', 'Month/Day/Year', """"""],
-                             ['Second Hour', 'Assignment', 'Month/Day/Year',
-                               'Assignment', 'Month/Day/Year', """"""],
-                             ['Third Hour','Assignment','Month/Day/Year',
-                              'Assignment','Month/Day/Year',""""""],
-                             ['Fourth Hour','Assignment','Month/Day/Year',
-                              'Assignment','Month/Day/Year',""""""],
-                             ['Fifth Hour','Assignment','Month/Day/Year',
-                              'Assignment','Month/Day/Year',""""""]],
-                'Thursday':[['First Hour', 'Assignment', 'Month/Day/Year',
-                              'Assignment', 'Month/Day/Year', """"""],
-                            ['Second Hour', 'Assignment', 'Month/Day/Year',
-                              'Assignment', 'Month/Day/Year', """"""],
-                            ['Third Hour','Assignment','Month/Day/Year',
-                             'Assignment','Month/Day/Year',""""""],
-                            ['Fourth Hour','Assignment','Month/Day/Year',
-                             'Assignment','Month/Day/Year',""""""],
-                            ['Fifth Hour','Assignment','Month/Day/Year',
-                             'Assignment','Month/Day/Year',""""""]],
-                'Friday':[['First Hour', 'Assignment', 'Month/Day/Year',
-                            'Assignment', 'Month/Day/Year', """"""],
-                          ['Second Hour', 'Assignment', 'Month/Day/Year',
-                            'Assignment', 'Month/Day/Year', """"""],
-                          ['Third Hour','Assignment','Month/Day/Year',
-                           'Assignment','Month/Day/Year',""""""],
-                          ['Fourth Hour','Assignment','Month/Day/Year',
-                           'Assignment','Month/Day/Year',""""""],
-                          ['Fifth Hour','Assignment','Month/Day/Year',
-                           'Assignment','Month/Day/Year',""""""]]}
+        with open('data','r') as data_file:
+            data = load(data_file)
+    except:
+        data = {}
+
+        for day in ['Monday','Tuesday','Wednesday','Thursday','Friday']:
+            data[day] = []
+
+            for hour in ['First','Second','Third','Fourth','Fifth']:
+                data[day].append(
+                        [
+                            '{0} Hour'.format(hour), 
+                            'Assignment', 'Month/Day/Year',
+                            'Assignment', 'Month/Day/Year', 
+                            """"""
+                        ]
+                )
 
     def edit(self,label,day,hour):
 
@@ -163,11 +122,12 @@ class RootWidget(TabbedPanel):
     def dismissok(self,instance):
 
         self.data[self.day][self.hour][0] = self.hour_name.text
+
         if (self.day1.text != 'Day') and (self.month1.text != 'Month') and (self.year1.text != 'Year'):
              self.data[self.day][self.hour][1] = self.assignment1in.text
 
         if self.assignment1in.text and (self.day1.text != 'Day') and (self.month1.text != 'Month') and (self.year1.text != 'Year'):
-             self.data[self.day][self.hour][2] = self.day1.text + '/' + self.month1.text + '/' + self.year1.text
+             self.data[self.day][self.hour][2] = """{0}/{1}/{2}""".format(self.day1.text,self.month1.text,self.year1.text)
 
         if (self.day2.text != 'Day') and (self.month2.text != 'Month') and (self.year2.text != 'Year'):
              self.data[self.day][self.hour][3] = self.assignment2in.text
@@ -175,7 +135,12 @@ class RootWidget(TabbedPanel):
         if self.assignment2in.text and (self.day2.text != 'Day') and (self.month2.text != 'Month') and (self.year2.text != 'Year'):
              self.data[self.day][self.hour][4] = self.duedate2in.text
 
-        self.label.text = self.data[self.day][self.hour][0] + '\n' + self.data[self.day][self.hour][1] + ' ' + self.data[self.day][self.hour][2] + '\n' + self.data[self.day][self.hour][3] + ' ' + self.data[self.day][self.hour][4]
+        self.label.text = """{0}\n{1} {2}\n{3} {4}""".format(
+                self.data[self.day][self.hour][0],
+                self.data[self.day][self.hour][1],self.data[self.day][self.hour][2],
+                self.data[self.day][self.hour][3],self.data[self.day][self.hour][4]
+        )
+
         data = open('data','w')
         dump(self.data,data)
         data.close()
@@ -191,6 +156,7 @@ class RootWidget(TabbedPanel):
         self.days = day
         self.indexs = index
         self.editback = BoxLayout(orientation='vertical')
+
         self.editin = TextInput(text_hint='Notes',
                                 text=self.data[self.days][self.indexs][5],
                                 multiline=True)
@@ -198,13 +164,17 @@ class RootWidget(TabbedPanel):
                                pos_hint={'center_x':.5,})
         self.cancelbutton = Button(text='Cancel',size_hint=(.5,.5),
                                    pos_hint={'center_x':.5,})
+
         self.editback.add_widget(self.editin)
         self.editback.add_widget(self.okbutton)
         self.editback.add_widget(self.cancelbutton)
+
         self.popup = Popup(content=self.editback,auto_dismiss=False,
                            size_hint=(.75,.75),title='Edit Notes')
+
         self.okbutton.bind(on_press=self.dismissok2)
         self.cancelbutton.bind(on_press=self.popup.dismiss)
+
         self.popup.open()
 
 
